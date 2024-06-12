@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
-    <title>Weather App</title>
+    <title>🌎 Weather App</title>
   </head>
   <body>
     <div class="weather-app">
@@ -25,7 +25,12 @@
             class="search-form-input"
             id="search-form-input"
           />
-          <input type="submit" value="Search" class="search-form-button" />
+          <input
+            type="submit"
+            value="Search"
+            class="search-form-button"
+            id="search-form-button"
+          />
         </form>
       </header>
       <main>
@@ -37,20 +42,25 @@
               <br />
               Humidity: <strong id="humidity"></strong>, Wind:
               <strong id="wind"></strong>
+              <br />
             </p>
           </div>
           <div class="weather-app-temperature-container">
             <div id="icon"></div>
             <div class="weather-app-temperature" id="temperature">12</div>
-            <div class="weather-app-unit">°C</div>
+            <div class="weather-app-unit">o</div>
           </div>
+        </div>
+        <div class="weather-feels-like">
+          🌡 Feels like
+          <span id="feels"></span>
         </div>
         <div class="weather-forecast" id="forecast"></div>
       </main>
 
       <footer>
         <p>
-          This project was coded by
+          This project was coded with ❤ by
           <a href="https://github.com/juliabacchi1" target="_blank"
             >Júlia Bacchi</a
           >

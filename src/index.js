@@ -4,6 +4,7 @@ function refreshWeather(response) {
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
+  let feelsElement = document.querySelector("#feels");
   let windElement = document.querySelector("#wind");
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
@@ -20,6 +21,9 @@ function refreshWeather(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
+  feelsElement.innerHTML = `${Math.round(
+    response.data.temperature.feels_like
+  )}º`;
   timeElement.innerHTML = formatDate(date);
 
   getForecast(response.data.city);
@@ -110,4 +114,4 @@ function displayForecast(response) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("São Paulo");
+searchCity("Florianópolis");
